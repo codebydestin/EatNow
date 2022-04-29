@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   subTextBox: {
     paddingHorizontal: 16,
-    marginBottom: 16,
+    marginVertical: 16,
   },
 });
 

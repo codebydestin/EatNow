@@ -1,12 +1,18 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, TouchableOpacity, Text, Image } from "react-native";
 import styles from "./styles";
 import template from "../../styles/template";
+import { useNavigation } from "@react-navigation/native";
 
 const ListingCard = ({ listing }) => {
-  const { name, distance, rating, categories } = listing;
+  const { name, distance, rating, categories, price } = listing;
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.wrapper}>
+    <TouchableOpacity
+      style={styles.wrapper}
+      onPress={() => navigation.navigate("ListingDetail")}
+    >
       <Image
         source={{ uri: listing.image_url }}
         style={{
@@ -25,8 +31,9 @@ const ListingCard = ({ listing }) => {
           <Text style={styles.subText}>{categories[0]?.title} • </Text>
           <Text style={styles.subText}>{distance}</Text>
         </View>
+        <Text>{price}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -5,7 +5,7 @@ import ListingCard from "../../components/ListingCard";
 import styles from "./styles";
 
 const SearchScreen = () => {
-  const [term, setTerm] = useState("chicken");
+  const [term, setTerm] = useState("burger");
   const [businesses, setBusinesses] = useState([]);
 
   const searchAPI = async () => {
