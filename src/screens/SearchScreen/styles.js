@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import { white } from "../../styles/colors";
+import { bgColor, white } from "../../styles/colors";
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: white,
+    backgroundColor: bgColor,
     flex: 1,
   },
 });

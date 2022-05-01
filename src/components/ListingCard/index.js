@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Text, Image } from "react-native";
 import styles from "./styles";
 import template from "../../styles/template";
 import { useNavigation } from "@react-navigation/native";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const ListingCard = ({ listing }) => {
   const { name, distance, rating, categories, price } = listing;
@@ -23,6 +24,7 @@ const ListingCard = ({ listing }) => {
         }}
       />
       <View style={styles.ratingWrap}>
+        <Icon name="star" />
         <Text>{rating}</Text>
       </View>
       <View style={styles.subTextBox}>
@@ -31,7 +33,7 @@ const ListingCard = ({ listing }) => {
           <Text style={styles.subText}>{categories[0]?.title} • </Text>
           <Text style={styles.subText}>{distance}</Text>
         </View>
-        <Text>{price}</Text>
+        <Text style={styles.priceText}>{price}</Text>
       </View>
     </TouchableOpacity>
   );

@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 import SearchScreen from "./src/screens/SearchScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ListingDetail from "./src/screens/ListingDetail/index";
+import LocationSearch from "./src/screens/LocationSearch/index";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Search">
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="ListingDetail" component={ListingDetail} />
+        <Stack.Screen name="LocationSearch" component={LocationSearch} />
       </Stack.Navigator>
     </NavigationContainer>
   );

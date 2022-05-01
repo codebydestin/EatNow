@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     margin: 10,
     shadowColor: "#F4F4F4",
     shadowOffset: {
-      width: 0,
+      width: 2,
       height: 2,
     },
     shadowOpacity: 1,
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
   title: {
     ...titleText,
+    fontFamily: "Barlow-Regular",
   },
   subText: {
     ...subText,
@@ -38,6 +39,12 @@ const styles = StyleSheet.create({
   subTextBox: {
     paddingHorizontal: 16,
     marginVertical: 16,
+  },
+  priceText: {
+    color: "#178899",
+    fontWeight: "bold",
+    fontSize: 17,
+    marginTop: 8,
   },
 });
 
