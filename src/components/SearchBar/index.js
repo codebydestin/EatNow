@@ -5,13 +5,14 @@ import styles from "./styles";
 const SearchBar = ({ term, onTermChange, onSearch }) => {
   return (
     <View style={styles.wrapper}>
-      <Icon name="search" size={18} />
+      <Icon name="search" style={styles.searchIcon} />
       <TextInput
-        placeholder="search here"
+        placeholder="What do you want to eat.."
         value={term}
-        //onChangeText={onTermChange}
+        onChangeText={onTermChange}
         onEndEditing={onSearch}
         style={styles.searchInput}
+        returnKeyType="done"
       />
     </View>
   );

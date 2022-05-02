@@ -1,5 +1,11 @@
+import { textColor } from "./colors";
+
+export const base = {
+  color: textColor,
+};
+
 export const titleText = {
-  color: "#1D1F37",
+  ...base,
   fontWeight: "bold",
   marginVertical: 4,
   fontSize: 15,

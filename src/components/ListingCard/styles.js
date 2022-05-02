@@ -1,44 +1,53 @@
 import { StyleSheet } from "react-native";
-import { white } from "../../styles/colors";
-import { subText, titleText } from "../../styles/typography";
+import { white, yellow } from "../../styles/colors";
+import { base, subText, titleText } from "../../styles/font";
+import { spacing, width, windowWidth } from "../../styles/sizing";
+import { gradient } from "../../styles/template";
 
 const styles = StyleSheet.create({
   wrapper: {
+    width: 320,
+    padding: spacing,
     backgroundColor: white,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    borderRadius: 20,
-    margin: 10,
-    shadowColor: "#F4F4F4",
-    shadowOffset: {
-      width: 2,
-      height: 2,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 4,
-
-    elevation: 5,
+    margin: spacing / 2,
+    borderRadius: spacing,
+    ...gradient,
+  },
+  coverImage: {
+    width: "100%",
+    height: 200,
+    resizeMode: "cover",
+    borderRadius: 16,
   },
   title: {
     ...titleText,
-    fontFamily: "Barlow-Regular",
   },
   subText: {
     ...subText,
   },
+  starIcon: {
+    color: yellow,
+    fontSize: 16,
+    marginRight: 4,
+  },
+  ratingText: {
+    ...base,
+    fontWeight: "bold",
+  },
   ratingWrap: {
     backgroundColor: white,
     position: "absolute",
-    top: 16,
-    right: 16,
-    padding: 8,
-    minWidth: 44,
+    top: spacing,
+    right: spacing,
+    padding: spacing / 2,
+    minWidth: 58,
     alignItems: "center",
+    justifyContent: "center",
     borderRadius: 4,
+    flexDirection: "row",
   },
   subTextBox: {
-    paddingHorizontal: 16,
-    marginVertical: 16,
+    marginVertical: spacing,
   },
   priceText: {
     color: "#178899",

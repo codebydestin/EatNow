@@ -1,10 +1,26 @@
 import { StyleSheet } from "react-native";
-import { bgColor, white } from "../../styles/colors";
+import { lightColor, white } from "../../styles/colors";
+import { spacing } from "../../styles/sizing";
+import { gradient } from "../../styles/template";
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: bgColor,
+    backgroundColor: white,
     flex: 1,
+  },
+  header: {
+    backgroundColor: white,
+    borderRadius: spacing,
+    margin: spacing,
+    ...gradient,
+  },
+  errorWrap: {
+    alignItems: "center",
+    marginVertical: 24,
+  },
+  warningText: {
+    color: lightColor,
+    marginVertical: 8,
   },
 });
 

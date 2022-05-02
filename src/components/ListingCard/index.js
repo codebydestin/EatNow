@@ -14,25 +14,21 @@ const ListingCard = ({ listing }) => {
       style={styles.wrapper}
       onPress={() => navigation.navigate("ListingDetail")}
     >
-      <Image
-        source={{ uri: listing.image_url }}
-        style={{
-          width: "100%",
-          height: 200,
-          resizeMode: "cover",
-          borderRadius: 20,
-        }}
-      />
-      <View style={styles.ratingWrap}>
-        <Icon name="star" />
-        <Text>{rating}</Text>
-      </View>
+      <Image source={{ uri: listing.image_url }} style={styles.coverImage} />
+      {rating && (
+        <View style={styles.ratingWrap}>
+          <Icon name="star" style={styles.starIcon} />
+          <Text style={styles.ratingText}>{rating.toFixed(1)}</Text>
+        </View>
+      )}
       <View style={styles.subTextBox}>
         <Text style={styles.title}>{name}</Text>
         <View style={template.horBox}>
-          <Text style={styles.subText}>{categories[0]?.title} • </Text>
-          <Text style={styles.subText}>{distance}</Text>
+          {categories?.map((cat) => (
+            <Text style={styles.subText}>{cat.title} </Text>
+          ))}
         </View>
+        <Text style={styles.subText}>{distance}</Text>
         <Text style={styles.priceText}>{price}</Text>
       </View>
     </TouchableOpacity>
