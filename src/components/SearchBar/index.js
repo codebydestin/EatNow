@@ -1,4 +1,5 @@
-import { View, TextInput } from "react-native";
+import { TextInput, View } from "react-native";
+
 import Icon from "react-native-vector-icons/FontAwesome";
 import styles from "./styles";
 

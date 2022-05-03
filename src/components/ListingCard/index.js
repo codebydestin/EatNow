@@ -46,7 +46,7 @@ const ListingCard = ({ listing, largeSize }) => {
           />
           <Text style={styles.subText}>{`${metersToMiles} miles`}</Text>
         </View>
-        <Text style={styles.priceText}>{price}</Text>
+        {!!price && <Text style={styles.priceText}>{price}</Text>}
       </View>
     </TouchableOpacity>
   );

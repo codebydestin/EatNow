@@ -6,6 +6,12 @@ const template = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
   },
+  tabBarImage: (color) => ({
+    width: 28,
+    height: 28,
+    resizeMode: "contain",
+    tintColor: color,
+  }),
 });
 
 export const gradient = {
