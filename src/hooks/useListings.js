@@ -17,6 +17,7 @@ export default () => {
           term,
           location: "new york",
           limit: 50,
+          sort_by: "distance",
         },
       });
       setListings(response.data.businesses);

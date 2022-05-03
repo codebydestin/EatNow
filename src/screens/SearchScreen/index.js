@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import client from "../../api/client";
-import ListingCard from "../../components/ListingCard";
 import SearchBar from "../../components/SearchBar";
 import styles from "./styles";
 import LocationBar from "../../components/LocationBar";
@@ -9,11 +7,33 @@ import { LinesLoader } from "react-native-indicator";
 import { lightColor, red } from "../../styles/colors";
 import Icon from "react-native-vector-icons/FontAwesome";
 import useListings from "../../hooks/useListings";
+import ListingCarousel from "../../components/ListingCarousel";
 
 const SearchScreen = () => {
   const [term, setTerm] = useState("");
   const [location, setLocation] = useState("New York");
   const [performSearch, listings, showError, isLoading] = useListings();
+
+  const listingData = [
+    {
+      data: "highestRated",
+      title: "Highest Rated",
+      icon: "trophy",
+      highlight: !!listings.length,
+    },
+    {
+      data: "distance",
+      title: "Near me",
+      icon: "map-pin",
+      highlight: false,
+    },
+    {
+      data: "lowestListings",
+      title: `${term} places in ${location}`,
+      icon: "cutlery",
+      highlight: false,
+    },
+  ];
 
   const loadingView = (
     <View style={{ alignItems: "center" }}>
@@ -28,22 +48,34 @@ const SearchScreen = () => {
     </View>
   );
 
+  const filterListingsBy = (data) => {
+    return listings.filter((lis) => {
+      switch (data) {
+        case "highestRated":
+          return lis.rating > 4.5;
+        case "distance":
+          return lis.distance < 2000;
+        default:
+          return lis.rating <= 4.5;
+      }
+    });
+  };
+
   const contentView = (
     <>
       {showError ? (
         errorView
       ) : (
         <>
-          <Text>This is a header</Text>
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            showsHorizontalScrollIndicator={false}
-            horizontal
-          >
-            {listings?.map((listing) => {
-              return <ListingCard listing={listing} key={listing.id} />;
-            })}
-          </ScrollView>
+          {listingData.map((lis) => (
+            <ListingCarousel
+              key={lis.title}
+              listings={filterListingsBy(lis.data)}
+              title={lis.title}
+              icon={lis.icon}
+              highlight={lis.highlight}
+            />
+          ))}
         </>
       )}
     </>

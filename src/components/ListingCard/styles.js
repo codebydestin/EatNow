@@ -5,14 +5,14 @@ import { spacing, width, windowWidth } from "../../styles/sizing";
 import { gradient } from "../../styles/template";
 
 const styles = StyleSheet.create({
-  wrapper: {
-    width: 320,
+  wrapper: (largeSize) => ({
+    width: largeSize ? 320 : 240,
     padding: spacing,
     backgroundColor: white,
     margin: spacing / 2,
     borderRadius: spacing,
     ...gradient,
-  },
+  }),
   coverImage: {
     width: "100%",
     height: 200,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   subTextBox: {
-    marginVertical: spacing,
+    marginTop: 12,
   },
   priceText: {
     color: "#178899",
