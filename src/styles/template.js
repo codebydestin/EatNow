@@ -1,13 +1,15 @@
 import { StyleSheet } from "react-native";
+import { gradientColor } from "./colors";
 
 const template = StyleSheet.create({
   horBox: {
     flexDirection: "row",
+    flexWrap: "wrap",
   },
 });
 
 export const gradient = {
-  shadowColor: "#F2F5FA",
+  shadowColor: gradientColor,
   shadowOffset: {
     width: 0,
     height: 0,

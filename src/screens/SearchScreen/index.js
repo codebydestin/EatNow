@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { ScrollView, Text, View } from "react-native";
+import { lightColor, red } from "../../styles/colors";
+
+import Icon from "react-native-vector-icons/FontAwesome";
+import { LinesLoader } from "react-native-indicator";
+import ListingCarousel from "../../components/ListingCarousel";
+import LocationBar from "../../components/LocationBar";
 import SearchBar from "../../components/SearchBar";
 import styles from "./styles";
-import LocationBar from "../../components/LocationBar";
-import { LinesLoader } from "react-native-indicator";
-import { lightColor, red } from "../../styles/colors";
-import Icon from "react-native-vector-icons/FontAwesome";
 import useListings from "../../hooks/useListings";
-import ListingCarousel from "../../components/ListingCarousel";
 
 const SearchScreen = () => {
   const [term, setTerm] = useState("");

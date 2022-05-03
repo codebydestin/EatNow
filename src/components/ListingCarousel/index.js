@@ -1,9 +1,10 @@
-import React from "react";
 import { ScrollView, Text, View } from "react-native";
-import ListingCard from "../ListingCard";
-import styles from "./styles";
+
 import Icon from "react-native-vector-icons/FontAwesome";
+import ListingCard from "../ListingCard";
+import React from "react";
 import { lightColor } from "../../styles/colors";
+import styles from "./styles";
 
 const ListingCarousel = ({ listings, title, highlight = false, icon }) => {
   return (

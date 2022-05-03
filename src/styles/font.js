@@ -1,4 +1,4 @@
-import { textColor } from "./colors";
+import { lightText, textColor } from "./colors";
 
 export const base = {
   color: textColor,
@@ -12,7 +12,9 @@ export const titleText = {
 };
 
 export const subText = {
-  color: "#A8AAAF",
+  color: lightText,
   fontSize: 13,
   marginVertical: 4,
+  fontWeight: "600",
+  flexWrap: "wrap",
 };

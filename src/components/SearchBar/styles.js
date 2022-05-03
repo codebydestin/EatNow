@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import { bgColor, lightColor, textColor } from "../../styles/colors";
+import { gradientColor, lightColor, textColor } from "../../styles/colors";
 import { spacing } from "../../styles/sizing";
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: bgColor,
+    backgroundColor: gradientColor,
     borderRadius: spacing,
     paddingHorizontal: 12,
     margin: spacing,

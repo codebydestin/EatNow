@@ -1,5 +1,5 @@
-import { useState } from "react";
 import client from "../api/client";
+import { useState } from "react";
 
 export default () => {
   const [listings, setListings] = useState([]);

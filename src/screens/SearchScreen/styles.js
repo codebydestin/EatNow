@@ -1,7 +1,8 @@
-import { StyleSheet } from "react-native";
 import { lightColor, white } from "../../styles/colors";
-import { spacing } from "../../styles/sizing";
+
+import { StyleSheet } from "react-native";
 import { gradient } from "../../styles/template";
+import { spacing } from "../../styles/sizing";
 
 const styles = StyleSheet.create({
   wrapper: {
