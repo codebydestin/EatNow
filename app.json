@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Yelpie",
-    "slug": "Yelpie",
+    "name": "EatNow",
+    "slug": "EatNow",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
   },
-  "name": "Yelpie"
+  "name": "EatNow"
 }
